@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import First from './First';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import About from './About';
 import Navbar from './Navbar';
+import Event from './Event';
+import NotFound from './NotFound';
+import EventAssignment from './EventAssignment';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,9 +17,13 @@ root.render(
     <BrowserRouter>
     <Navbar />
       <Routes>
-       <Route path='/' element={<App />}></Route> 
-       <Route path='/first' element={<First />}></Route>
-       <Route path='/about' element={<About/>}></Route>
+       <Route path='/' element={<App />} />
+       <Route path='/home' element={<Navigate to="/" />} />
+       <Route path='/first' element={<First />} />
+       <Route path='/assignment' element={<EventAssignment />} />
+       <Route path='/about' element={<About/>} />
+       <Route path='/event' element={<Event />} />
+       <Route path='*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>
     {/* <First></First> */}

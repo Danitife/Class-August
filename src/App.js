@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import ButtonComp from './components/ButtonComp';
 
 function App() {
   const dan = {
@@ -18,6 +19,7 @@ function App() {
       <div className='sm:flex block justify-center'>
         <div className='w-24 h-24 m-auto sm:m-0 md:w-52 bg-orange-600 hover:bg-blue-400 transition-ease-in'></div>
         <div className='w-24 h-24 m-auto mt-10 sm:m-0 bg-orange-300'></div>
+        <ButtonComp />
       </div>
     </>
   );
