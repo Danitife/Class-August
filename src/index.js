@@ -10,6 +10,7 @@ import Navbar from './Navbar';
 import Event from './Event';
 import NotFound from './NotFound';
 import EventAssignment from './EventAssignment';
+import User from './User';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,6 +24,7 @@ root.render(
        <Route path='/assignment' element={<EventAssignment />} />
        <Route path='/about' element={<About/>} />
        <Route path='/event' element={<Event />} />
+       <Route path='/users' element={<User />} />
        <Route path='*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>
