@@ -11,6 +11,7 @@ import Event from './Event';
 import NotFound from './NotFound';
 import EventAssignment from './EventAssignment';
 import User from './User';
+import InfoWeNeed from './StateLifting/InfoWeNeed';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,6 +26,7 @@ root.render(
        <Route path='/about' element={<About/>} />
        <Route path='/event' element={<Event />} />
        <Route path='/users' element={<User />} />
+       <Route path='/statelifting' element={<InfoWeNeed />} />
        <Route path='*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>
