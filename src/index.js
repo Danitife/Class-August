@@ -12,6 +12,9 @@ import NotFound from './NotFound';
 import EventAssignment from './EventAssignment';
 import User from './User';
 import InfoWeNeed from './StateLifting/InfoWeNeed';
+import Fetch from './UseEffect/Fetch';
+import Signup from './Validation/Signup';
+import Signin from './Validation/Signin';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,6 +30,9 @@ root.render(
        <Route path='/event' element={<Event />} />
        <Route path='/users' element={<User />} />
        <Route path='/statelifting' element={<InfoWeNeed />} />
+       <Route path='/photos' element={<Fetch />} />
+       <Route path='/signup' element={<Signup />} />
+       <Route path='/signin' element={<Signin />} />
        <Route path='*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>

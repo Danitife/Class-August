@@ -1,0 +1,51 @@
+{
+  "create": [
+    {
+      "email": "daniel@gmail.com",
+      "password": "daniel",
+      "c_password": "daniel",
+      "f_name": "Developer",
+      "l_name": "Daniel",
+      "phone": "123-456-7890",
+      "company": "SQI",
+      "id": 1
+    },
+    {
+      "email": "samuel@gmail.com",
+      "password": "samuel",
+      "c_password": "samuel",
+      "f_name": "Samuel",
+      "l_name": "Developer",
+      "phone": "123-456-7890",
+      "company": "ert",
+      "id": 2
+    },
+    {
+      "email": "adesanyaboluwatife29@gmail.com",
+      "password": "123456",
+      "c_password": "123456",
+      "f_name": "Dev",
+      "l_name": "Dan",
+      "phone": "123-456-7890",
+      "company": "SQI",
+      "id": 3
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
