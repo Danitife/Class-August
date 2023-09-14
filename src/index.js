@@ -15,27 +15,31 @@ import InfoWeNeed from './StateLifting/InfoWeNeed';
 import Fetch from './UseEffect/Fetch';
 import Signup from './Validation/Signup';
 import Signin from './Validation/Signin';
+import {store} from "./store";
+import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-    <Navbar />
-      <Routes>
-       <Route path='/' element={<App />} />
-       <Route path='/home' element={<Navigate to="/" />} />
-       <Route path='/first' element={<First />} />
-       <Route path='/assignment' element={<EventAssignment />} />
-       <Route path='/about' element={<About/>} />
-       <Route path='/event' element={<Event />} />
-       <Route path='/users' element={<User />} />
-       <Route path='/statelifting' element={<InfoWeNeed />} />
-       <Route path='/photos' element={<Fetch />} />
-       <Route path='/signup' element={<Signup />} />
-       <Route path='/signin' element={<Signin />} />
-       <Route path='*' element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+      <Navbar />
+        <Routes>
+        <Route path='/' element={<App />} />
+        <Route path='/home' element={<Navigate to="/" />} />
+        <Route path='/first' element={<First />} />
+        <Route path='/assignment' element={<EventAssignment />} />
+        <Route path='/about' element={<About/>} />
+        <Route path='/event' element={<Event />} />
+        <Route path='/users' element={<User />} />
+        <Route path='/statelifting' element={<InfoWeNeed />} />
+        <Route path='/photos' element={<Fetch />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/signin' element={<Signin />} />
+        <Route path='*' element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
     {/* <First></First> */}
   </React.StrictMode>
 );

@@ -1,7 +1,10 @@
 import './App.css';
 import ButtonComp from './components/ButtonComp';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const num = useSelector((state)=> state.globalNum);
+  
   const dan = {
     textDecoration: "underline",
     color: "blue"
@@ -10,6 +13,7 @@ function App() {
     // VIRTUAL DOM
     //
     <>
+      {num}
       <h1 style={dan}>Welcome to React Class</h1>
       <h1 className='jj bg-slate-950'>Lorem ipsum dolor sit amet.</h1>
       <h1 className='text-green-400'>Test Tailwind</h1>

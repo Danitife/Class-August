@@ -1,9 +1,18 @@
 import React from 'react'
 import { useState } from 'react'
-import ButtonComp from './components/ButtonComp'
+import ButtonComp from './components/ButtonComp';
+import { useDispatch, useSelector } from 'react-redux';
+import {increase} from "./Redux/NumSlice"
 
 
 const EventAssignment = () => {
+    const dispatch = useDispatch();
+    
+    const numb = useSelector((state)=> state.globalNum.num)
+    const increaseState = ()=>{
+        console.log("Hello");
+        dispatch(increase())
+    }
  let studentsInfo=[
     {name:"Ade", class: "jss1", gender: "male", validated: true},
     {name:"Bayo", class: "jss2", gender: "male", validated: false},
@@ -36,6 +45,8 @@ const showUnValidated=()=>{
 }
   return (
     <>
+    <h1>Global num is {numb}</h1>
+    <button onClick={increaseState}>Increase Global State</button>
     <div className='flex mb-5 ml-9'>
     <button onClick={displayAllstudents} className='bg-green-600 rounded p-2 mr-3'>All Students</button>
     <button onClick={showValidated} className='bg-orange-600 rounded p-2 mr-3'>Validated</button>
