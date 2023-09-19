@@ -24,9 +24,10 @@ const Signin = () => {
             if(found == "undefined"){
                 alert("User not found")
             }else{
-                axios.post("http://localhost:1234/create", values).then((res)=>{
-                    console.log(res.data.token);
-                    localStorage.setItem("AppToken", res.data.token)
+                axios.post("http://localhost:1234/signin", found).then((res)=>{
+                    // console.log(res.data.token);
+                    localStorage.setItem("AppToken", JSON.stringify(res.data))
+                    // localStorage.setItem("AppToken", res.data.token)
                     alert("Registration Successfull")
                     navigate("/dashboard")
                 }).catch((err)=>{

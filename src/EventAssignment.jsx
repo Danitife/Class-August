@@ -8,7 +8,9 @@ import {increase} from "./Redux/NumSlice"
 const EventAssignment = () => {
     const dispatch = useDispatch();
     
-    const numb = useSelector((state)=> state.globalNum.num)
+    const {num} = useSelector((state)=> state.globalNum.num)
+    let initial = 0
+    let tpage = 3
     const increaseState = ()=>{
         console.log("Hello");
         dispatch(increase())
@@ -26,11 +28,9 @@ const EventAssignment = () => {
     {name:"Tolani", class: "jss2", gender: "female", validated: false},
     {name:"Bose", class: "jss1", gender: "female", validated: true},
     {name:"Patience", class: "jss1", gender: "female", validated: false},
-    {name:"Gloria", class: "jss1", gender: "female", validated: true},
-
-    
+    {name:"Gloria", class: "jss1", gender: "female", validated: true}
 ]
-const [allStudents, setallStudents] = useState(studentsInfo)
+const [allStudents, setallStudents] = useState(studentsInfo.splice(initial, tpage))
 const displayAllstudents=()=>{
     setallStudents(studentsInfo)
 }
@@ -43,9 +43,21 @@ const showUnValidated=()=>{
     setallStudents(unvalidated)
 
 }
+
+const paginateNext = ()=>{
+    console.log(studentsInfo.splice(initial+3, 3));
+    console.log(studentsInfo.splice(3, 3));
+    let paginated = studentsInfo.splice(3, 3)
+    setallStudents(paginated)
+    // setinitial(initial+3)
+    // console.log(initial);
+}
+const paginatePrev = ()=>{
+    
+}
   return (
     <>
-    <h1>Global num is {numb}</h1>
+    <h1>Global num is {num}</h1>
     <button onClick={increaseState}>Increase Global State</button>
     <div className='flex mb-5 ml-9'>
     <button onClick={displayAllstudents} className='bg-green-600 rounded p-2 mr-3'>All Students</button>
@@ -90,6 +102,8 @@ const showUnValidated=()=>{
         </tbody>
         ))}
     </table>
+    <button onClick={paginatePrev}>Prev</button>
+    <button onClick={paginateNext}>Next</button>
 </div>
 
     </>

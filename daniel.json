@@ -31,11 +31,22 @@
       "id": 3
     }
   ],
+  "signin": {
+    "email": "daniel@gmail.com",
+    "password": "daniel",
+    "c_password": "daniel",
+    "f_name": "Developer",
+    "l_name": "Daniel",
+    "phone": "123-456-7890",
+    "company": "SQI",
+    "id": 1
+  },
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "author": "Developer Daniel",
+      "title": "React",
+      "content": "State management gone wrong",
+      "id": 1
     }
   ],
   "comments": [

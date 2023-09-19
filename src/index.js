@@ -17,6 +17,7 @@ import Signup from './Validation/Signup';
 import Signin from './Validation/Signin';
 import {store} from "./store";
 import { Provider } from 'react-redux';
+import Dashboard from './Validation/Dashboard';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -36,6 +37,7 @@ root.render(
         <Route path='/photos' element={<Fetch />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/signin' element={<Signin />} />
+        <Route path='/dashboard' element={<Dashboard />} />
         <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>

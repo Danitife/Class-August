@@ -3,7 +3,8 @@ import ButtonComp from './components/ButtonComp';
 import { useSelector } from 'react-redux';
 
 function App() {
-  const num = useSelector((state)=> state.globalNum);
+  const {num} = useSelector((state)=> state.globalNum);
+  const {post} = useSelector((state)=> state.PostBlog)
   
   const dan = {
     textDecoration: "underline",
@@ -14,6 +15,13 @@ function App() {
     //
     <>
       {num}
+      {post &&
+        post.map((el, i)=>(
+          <div key={i}>
+            {el.author}
+          </div>
+        ))
+      }
       <h1 style={dan}>Welcome to React Class</h1>
       <h1 className='jj bg-slate-950'>Lorem ipsum dolor sit amet.</h1>
       <h1 className='text-green-400'>Test Tailwind</h1>

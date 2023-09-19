@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { useSelector } from 'react-redux'
 
 const Event = () => {
-  const num = useSelector((state)=> state.globalNum)
+  const {num} = useSelector((state)=> state.globalNum)
     const [myNAme, setmyNAme] = useState("Daniel")
     const [btnNAme, setbtnNAme] = useState("Change Name")
     const [showName, setshowName] = useState(true)
