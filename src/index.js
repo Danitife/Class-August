@@ -18,6 +18,7 @@ import Signin from './Validation/Signin';
 import {store} from "./store";
 import { Provider } from 'react-redux';
 import Dashboard from './Validation/Dashboard';
+import OneAssignment from './OneAssignment';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -30,6 +31,7 @@ root.render(
         <Route path='/home' element={<Navigate to="/" />} />
         <Route path='/first' element={<First />} />
         <Route path='/assignment' element={<EventAssignment />} />
+        <Route path='/assignment/:id' element={<OneAssignment />} />
         <Route path='/about' element={<About/>} />
         <Route path='/event' element={<Event />} />
         <Route path='/users' element={<User />} />
